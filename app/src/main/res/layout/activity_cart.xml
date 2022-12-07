@@ -26,7 +26,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#CD6811"
+            android:background="#FFC66232"
             android:orientation="vertical">
 
             <LinearLayout
@@ -60,7 +60,7 @@
                 android:layout_marginLeft="35dp"
                 android:layout_marginRight="35dp"
                 android:layout_weight="1"
-                android:backgroundTint="#EE13D50D"
+                android:backgroundTint="#EE2BC826"
                 android:backgroundTintMode="src_over"
                 android:text="@string/PlaceOrder"
                 android:textColor="#311B92" />

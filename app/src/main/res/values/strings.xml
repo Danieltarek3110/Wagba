@@ -16,6 +16,14 @@
     <string name="Password">Password</string>
     <string name="Login">Login</string>
 
+    <string name="PrevOrders">Previous Orders</string>
+    <string name="HelloThere">Hello there,  </string>
+    <string name="MyOrders">My Orders</string>
+    <string name="RestNearMe">Restaurants Near Me</string>
+    <string name="MyCart">My Cart</string>
+    <string name="DiffLogin">Log out</string>
+
+
     <string name="PlaceOrder">Place Order</string>
     <string name="CartTotal">Cart Total:  </string>
 
@@ -40,4 +48,6 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

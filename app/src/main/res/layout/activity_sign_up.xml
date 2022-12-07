@@ -33,6 +33,7 @@
         android:layout_marginStart="180dp"
         android:layout_marginEnd="114dp"
         android:layout_marginBottom="248dp"
+        android:backgroundTint="#FFC66232"
         android:text="@string/Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
