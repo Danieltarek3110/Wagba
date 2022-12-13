@@ -10,32 +10,19 @@ import com.example.wagba01.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
     Intent intent01 , intent02;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.example.wagba01.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
         intent01 = new Intent(this, SignUp.class);
         intent02 = new Intent(this, LogIn.class);
 
-        binding.btnSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(intent01);
+        binding.btnSignUp.setOnClickListener(view1 -> startActivity(intent01));
 
-            }
-        });
-
-        binding.btnSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(intent02);
-
-            }
-        });
+        binding.btnSignIn.setOnClickListener(view12 -> startActivity(intent02));
 
     }
 }
