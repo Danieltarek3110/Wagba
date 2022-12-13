@@ -22,10 +22,24 @@
     <string name="RestNearMe">Restaurants Near Me</string>
     <string name="MyCart">My Cart</string>
     <string name="DiffLogin">Log out</string>
+    <string name="Menu">Menu</string>
 
 
     <string name="PlaceOrder">Place Order</string>
     <string name="CartTotal">Cart Total:  </string>
+
+    <string-array name="RestaurantsNames">
+        <item> KFC </item>
+        <item> McDonalds </item>
+        <item> Papa John's </item>
+        <item> Daddy's Burger </item>
+        <item> Willy's Kitchen </item>
+        <item> Sizzler </item>
+        <item> Hardees </item>
+        <item> CookDoor </item>
+        <item> Pizza Hut </item>
+        <item> Heart Attack </item>
+    </string-array>
 
     <string name="slide_1_title">Hello Food!</string>
     <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
