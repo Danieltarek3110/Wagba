@@ -9,11 +9,6 @@ public class Restaurant_model {
         this.image = image;
     }
 
-    public Restaurant_model(String name) {
-        this.name = name;
-    }
-
-
 
     public String getName() {
         return name;

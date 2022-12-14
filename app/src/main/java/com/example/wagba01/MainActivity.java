@@ -26,13 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding.btnSignUp.setOnClickListener(view1 -> startActivity(intent01));
         binding.btnSignIn.setOnClickListener(view12 -> startActivity(intent02));
-        binding.testbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(intent03);
-            }
-        });
-
+        binding.testbtn.setOnClickListener(v -> startActivity(intent03));
 
 
     }

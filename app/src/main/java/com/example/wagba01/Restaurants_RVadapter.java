@@ -25,8 +25,8 @@ public class Restaurants_RVadapter extends RecyclerView.Adapter<Restaurants_RVad
     @NonNull
     @Override
     public Restaurants_RVadapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.restaurants_recyclerview_row , parent);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View view = inflater.inflate(R.layout.restaurants_recyclerview_row , parent , false);
         return new Restaurants_RVadapter.MyViewHolder(view);
     }
 
