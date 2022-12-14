@@ -1,12 +1,15 @@
 package com.example.wagba01;
 
-import static com.example.wagba01.R.id.R_recyclerView;
+import static com.example.wagba01.R.id.restaurants_RV;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+
+import com.example.wagba01.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 
@@ -21,7 +24,9 @@ public class Restaurants extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
-        RecyclerView recyclerView = findViewById(R_recyclerView);
+        RecyclerView recyclerView ;
+        recyclerView = findViewById(R.id.restaurants_RV);
+
 
         setuprestaurantmodels();
 
