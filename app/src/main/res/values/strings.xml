@@ -23,6 +23,7 @@
     <string name="MyCart">My Cart</string>
     <string name="DiffLogin">Log out</string>
     <string name="Menu">Menu</string>
+    <string name="RestaurantsNearYou">Restaurants Near You</string>
 
 
     <string name="PlaceOrder">Place Order</string>
@@ -36,10 +37,101 @@
         <item> Starbucks </item>
         <item> Sizzler </item>
         <item> Hardees </item>
-        <item> CookDoor </item>
+        <item> Costa </item>
         <item> Pizza Hut </item>
         <item> Heart Attack </item>
     </string-array>
+
+    <string name="priceTest">EGP1.00</string>
+    <string name="AddToCart">Add to cart</string>
+
+
+    <string-array name="DishNames">
+        <item> KFC1 </item>
+        <item> KFC2 </item>
+        <item> KFC3 </item>
+        <item> KFC4 </item>
+        <item> McDonalds1 </item>
+        <item> McDonalds2 </item>
+        <item> McDonalds3 </item>
+        <item> McDonalds4 </item>
+        <item> Papa Johns1 </item>
+        <item> Papa Johns2 </item>
+        <item> Papa Johns3 </item>
+        <item> Papa Johns4 </item>
+        <item> Burger King1 </item>
+        <item> Burger King2 </item>
+        <item> Burger King3 </item>
+        <item> Burger King4 </item>
+        <item> Starbucks1 </item>
+        <item> Starbucks2 </item>
+        <item> Starbucks3 </item>
+        <item> Starbucks4 </item>
+        <item> Sizzler1 </item>
+        <item> Sizzler2 </item>
+        <item> Sizzler3 </item>
+        <item> Sizzler4 </item>
+        <item> Hardees1 </item>
+        <item> Hardees2 </item>
+        <item> Hardees3 </item>
+        <item> Hardees4 </item>
+        <item> Costa1 </item>
+        <item> Costa2 </item>
+        <item> Costa3 </item>
+        <item> Costa4 </item>
+        <item> Pizza Hut1 </item>
+        <item> Pizza Hut2 </item>
+        <item> Pizza Hut3 </item>
+        <item> Pizza Hut4 </item>
+        <item> Heart Attack1 </item>
+        <item> Heart Attack2 </item>
+        <item> Heart Attack3 </item>
+        <item> Heart Attack4 </item>
+    </string-array>
+
+    <string-array name="DishPrices">
+        <item> EGP20 </item>
+        <item> EGP30 </item>
+        <item> EGP40 </item>
+        <item> EGP50 </item>
+        <item> EGP20 </item>
+        <item> EGP30 </item>
+        <item> EGP40 </item>
+        <item> EGP50 </item>
+        <item> EGP20 </item>
+        <item> EGP30 </item>
+        <item> EGP40 </item>
+        <item> EGP50 </item>
+        <item> EGP20 </item>
+        <item> EGP30 </item>
+        <item> EGP40 </item>
+        <item> EGP50 </item>
+        <item> EGP20 </item>
+        <item> EGP30 </item>
+        <item> EGP40 </item>
+        <item> EGP50 </item>
+        <item> EGP20 </item>
+        <item> EGP30 </item>
+        <item> EGP40 </item>
+        <item> EGP50 </item>
+        <item> EGP20 </item>
+        <item> EGP30 </item>
+        <item> EGP40 </item>
+        <item> EGP50 </item>
+        <item> EGP20 </item>
+        <item> EGP30 </item>
+        <item> EGP40 </item>
+        <item> EGP50 </item>
+        <item> EGP20 </item>
+        <item> EGP30 </item>
+        <item> EGP40 </item>
+        <item> EGP50 </item>
+        <item> EGP20 </item>
+        <item> EGP30 </item>
+        <item> EGP40 </item>
+        <item> EGP50 </item>
+    </string-array>
+
 
     <string name="slide_1_title">Hello Food!</string>
     <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>

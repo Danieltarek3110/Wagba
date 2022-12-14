@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         intent01 = new Intent(this, SignUp.class);
         intent02 = new Intent(this, LogIn.class);
-        intent03 = new Intent(this, Restaurants.class);
+        intent03 = new Intent(this, Dishes.class);
 
         binding.btnSignUp.setOnClickListener(view1 -> startActivity(intent01));
         binding.btnSignIn.setOnClickListener(view12 -> startActivity(intent02));

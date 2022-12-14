@@ -53,8 +53,5 @@ public class Restaurants_RVadapter extends RecyclerView.Adapter<Restaurants_RVad
             imageView = itemView.findViewById(R.id.imageViewRow);
             textView = itemView.findViewById(R.id.textViewRow);
         }
-
-
-
     }
 }

@@ -13,6 +13,13 @@
         android:theme="@style/Theme.Wagba01"
         tools:targetApi="24">
         <activity
+            android:name=".Dishes"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Restaurants"
             android:exported="false">
             <meta-data
