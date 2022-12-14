@@ -15,6 +15,11 @@ public class Restaurant_model {
         this.name = name;
     }
 
+    public Restaurant_model(String name, int image) {
+        this.name = name;
+        this.image = image;
+    }
+
 
     public String getName() {
         return name;

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="409dp"
@@ -23,51 +23,42 @@
             android:layout_height="110dp">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/imageViewRow"
                 android:layout_width="140dp"
                 android:layout_height="104dp"
                 android:layout_marginStart="3dp"
                 android:layout_marginBottom="10dp"
+                android:contentDescription="@string/todo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_travel" />
+                app:srcCompat="@drawable/ic_travel"
+                tools:ignore="ImageContrastCheck" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textViewRow2"
                 android:layout_width="110dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="140dp"
-                android:text="TextView"
+                android:text="@string/HelloThere"
                 android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/imageView" />
+                app:layout_constraintStart_toStartOf="@+id/imageViewRow"
+                tools:ignore="TextContrastCheck" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textViewRow"
                 android:layout_width="235dp"
                 android:layout_height="59dp"
                 android:layout_marginStart="140dp"
                 android:layout_marginTop="8dp"
 
-                android:text="TextView"
+                android:text="@string/app_name"
                 android:textColor="#FFFFFF"
                 android:textSize="28sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/imageViewRow"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/buttonMenu"
-                android:layout_width="114dp"
-                android:layout_height="43dp"
-                android:layout_marginStart="248dp"
-                android:layout_marginTop="68dp"
-                android:backgroundTint="#ED601B"
-                android:text="@string/Menu"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="TouchTargetSizeCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
