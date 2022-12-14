@@ -14,11 +14,11 @@ import java.util.ArrayList;
 
 public class Restaurants_RVadapter extends RecyclerView.Adapter<Restaurants_RVadapter.MyViewHolder> {
     Context context;
-    ArrayList<Restaurant_model> restaurant_model;
+    ArrayList<Restaurant_model> restaurant_models;
 
-    public Restaurants_RVadapter(Context context , ArrayList<Restaurant_model> restaurant_model){
+    public Restaurants_RVadapter(Context context , ArrayList<Restaurant_model> restaurant_models){
         this.context = context;
-        this.restaurant_model = restaurant_model;
+        this.restaurant_models = restaurant_models;
     }
 
 
@@ -32,14 +32,14 @@ public class Restaurants_RVadapter extends RecyclerView.Adapter<Restaurants_RVad
 
     @Override
     public void onBindViewHolder(@NonNull Restaurants_RVadapter.MyViewHolder holder, int position) {
-        holder.textView.setText(restaurant_model.get(position).getName());
-        holder.imageView.setImageResource(restaurant_model.get(position).getImage());
+        holder.textView.setText(restaurant_models.get(position).getName());
+        holder.imageView.setImageResource(restaurant_models.get(position).getImage());
 
     }
 
     @Override
     public int getItemCount() {
-        return restaurant_model.size();
+        return restaurant_models.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{

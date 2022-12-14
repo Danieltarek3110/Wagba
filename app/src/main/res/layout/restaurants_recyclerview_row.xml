@@ -36,17 +36,6 @@
                 tools:ignore="ImageContrastCheck" />
 
             <TextView
-                android:id="@+id/textViewRow2"
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="140dp"
-                android:text="@string/HelloThere"
-                android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/imageViewRow"
-                tools:ignore="TextContrastCheck" />
-
-            <TextView
                 android:id="@+id/textViewRow"
                 android:layout_width="235dp"
                 android:layout_height="59dp"
