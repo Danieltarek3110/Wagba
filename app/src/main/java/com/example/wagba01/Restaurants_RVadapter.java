@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,17 +37,19 @@ public class Restaurants_RVadapter extends RecyclerView.Adapter<Restaurants_RVad
     public void onBindViewHolder(@NonNull Restaurants_RVadapter.MyViewHolder holder, int position) {
         holder.textView.setText(restaurant_models.get(position).getName());
         holder.imageView.setImageResource(restaurant_models.get(position).getImage());
+        holder.btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), Dishes.class);
+                Bundle extra = new Bundle();
+                extra.putSerializable("menu",restaurant_models.get(holder.getAdapterPosition()).getMenu());
+                v.getContext().startActivity(intent);
+
+            }
+        });
 
     }
-/*
-    @Override
-    public void onClick(View v){
-        Intent intent = new Intent(v.getContext(), Dishes_Model.class);
-        Bundle extra = new Bundle();
-        extra.putSerializable("menu",restaurant_models.get(holder().getAdapterPosition()).getMenu() );
-    }
 
- */
 
     @Override
     public int getItemCount() {
@@ -57,12 +60,14 @@ public class Restaurants_RVadapter extends RecyclerView.Adapter<Restaurants_RVad
 
         ImageView imageView;
         TextView textView;
+        Button btn;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.imageViewRow);
             textView = itemView.findViewById(R.id.textViewRow);
+            btn = itemView.findViewById(R.id.ViewMenuBtn);
         }
     }
 
