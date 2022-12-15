@@ -1,6 +1,8 @@
 package com.example.wagba01;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +38,15 @@ public class Restaurants_RVadapter extends RecyclerView.Adapter<Restaurants_RVad
         holder.imageView.setImageResource(restaurant_models.get(position).getImage());
 
     }
+/*
+    @Override
+    public void onClick(View v){
+        Intent intent = new Intent(v.getContext(), Dishes_Model.class);
+        Bundle extra = new Bundle();
+        extra.putSerializable("menu",restaurant_models.get(holder().getAdapterPosition()).getMenu() );
+    }
+
+ */
 
     @Override
     public int getItemCount() {
@@ -54,4 +65,6 @@ public class Restaurants_RVadapter extends RecyclerView.Adapter<Restaurants_RVad
             textView = itemView.findViewById(R.id.textViewRow);
         }
     }
+
+
 }
