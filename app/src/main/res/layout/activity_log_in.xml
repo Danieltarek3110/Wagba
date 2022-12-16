@@ -27,7 +27,7 @@
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/button_LogIn"
+        android:id="@+id/button_login01"
         android:layout_width="184dp"
         android:layout_height="48dp"
         android:layout_marginStart="180dp"
@@ -35,6 +35,7 @@
         android:layout_marginBottom="152dp"
         android:backgroundTint="#FFC66232"
         android:text="@string/Login"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -52,7 +53,7 @@
         android:ems="10"
         android:hint="@string/Password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/button_LogIn"
+        app:layout_constraintBottom_toTopOf="@+id/button_login01"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

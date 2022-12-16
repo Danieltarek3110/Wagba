@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.wagba01.databinding.ActivityMainBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
     Intent intent01 , intent02, intent03, intent04;
+    FirebaseAuth mAuth;
 
 
     @Override
@@ -25,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         intent03 = new Intent(this, Restaurants.class);
         intent04 = new Intent(this, Dishes.class);
 
+        mAuth = FirebaseAuth.getInstance();
+
 
         binding.btnSignUp.setOnClickListener(view1 -> startActivity(intent01));
         binding.btnSignIn.setOnClickListener(view12 -> startActivity(intent02));
@@ -36,6 +41,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+        FirebaseUser user = mAuth.getCurrentUser();
+        if(user==null){
+            startActivity(new Intent(MainActivity.this , LogIn.class));
+        }
 
     }
 

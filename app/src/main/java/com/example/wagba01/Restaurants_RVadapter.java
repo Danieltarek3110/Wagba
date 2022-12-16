@@ -1,5 +1,4 @@
 package com.example.wagba01;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-
 public class Restaurants_RVadapter extends RecyclerView.Adapter<Restaurants_RVadapter.MyViewHolder> {
     Context context;
     ArrayList<Restaurant_model> restaurant_models;
@@ -23,8 +21,7 @@ public class Restaurants_RVadapter extends RecyclerView.Adapter<Restaurants_RVad
         this.context = context;
         this.restaurant_models = restaurant_models;
     }
-
-
+    
     @NonNull
     @Override
     public Restaurants_RVadapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

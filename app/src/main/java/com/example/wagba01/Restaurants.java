@@ -10,8 +10,6 @@ import java.util.ArrayList;
 public class Restaurants extends AppCompatActivity {
     ArrayList<Restaurant_model> restaurant_models_array = new ArrayList<>();
 
-
-
     int[] RestaurantsImages = {R.drawable.kfc , R.drawable.mcdonalds , R.drawable.papajohns ,
             R.drawable.burgerking , R.drawable.starbucks , R.drawable.sizzler , R.drawable.hardees ,
             R.drawable.costa , R.drawable.pizzahut , R.drawable.heartattack};
