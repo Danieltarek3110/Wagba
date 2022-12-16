@@ -39,6 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Password01"
         tools:ignore="TextContrastCheck" />
 
     <EditText
@@ -94,5 +95,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EmailAddress01"
         tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/SignUp_Already"
+        android:layout_width="162dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="right|center_vertical"
+        android:text="@string/AlreadyAMember"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/LoginHereBtn"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/LoginHereBtn"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#E0E9EE"
+        android:text="@string/LoginHere"
+        android:textColor="#0A27C8"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
