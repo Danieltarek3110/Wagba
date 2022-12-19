@@ -2,6 +2,7 @@ package com.example.wagba01;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,9 +38,11 @@ public class Restaurants_RVadapter extends RecyclerView.Adapter<Restaurants_RVad
         holder.btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("Error" , restaurant_models.get(holder.getAdapterPosition()).getMenu().toString());
                 Intent intent = new Intent(v.getContext(), Dishes.class);
                 Bundle extra = new Bundle();
                 extra.putSerializable("menu",restaurant_models.get(holder.getAdapterPosition()).getMenu());
+                intent.putExtra("extra" , extra);
                 v.getContext().startActivity(intent);
 
             }

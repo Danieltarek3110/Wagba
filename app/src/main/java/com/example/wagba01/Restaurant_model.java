@@ -1,17 +1,18 @@
 package com.example.wagba01;
 import android.widget.Button;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-public class Restaurant_model {
+public class Restaurant_model implements Serializable {
     String name;
     int image;
     Button btn;
     ArrayList<Dishes_Model> Menu = new ArrayList<Dishes_Model>();
 
-    public Restaurant_model(String name, int image) {
+   /* public Restaurant_model(String name, int image) {
         this.name = name;
         this.image = image;
-    }
+    }*/
 
     public Restaurant_model(String name, int image, ArrayList<Dishes_Model> menu) {
         this.name = name;
@@ -24,6 +25,9 @@ public class Restaurant_model {
         this.image = image;
         this.btn = btn;
         Menu = menu;
+    }
+
+    public Restaurant_model() {
     }
 
     public String getName() {

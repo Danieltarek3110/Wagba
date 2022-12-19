@@ -3,7 +3,9 @@ package com.example.wagba01;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Dishes_Model {
+import java.io.Serializable;
+
+public class Dishes_Model implements Serializable {
     String DishName;
     String DishPrice;
     int DishImage;
@@ -13,6 +15,9 @@ public class Dishes_Model {
         DishName = dishName;
         DishPrice = dishPrice;
         DishImage = dishImage;
+    }
+
+    public Dishes_Model() {
     }
 
 

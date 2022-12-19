@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -29,11 +30,18 @@ public class Dishes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dishes);
+        Log.d("Error" , "dishes_models.toString()");
+
+        Bundle extra = getIntent().getBundleExtra("extra");
+        Log.d("Error: " , dishes_models.toString());
+        dishes_models = (ArrayList<Dishes_Model>) extra.getSerializable("menu");
+        Log.d("Error: " , dishes_models.toString());
+
 
         RecyclerView recyclerView = findViewById(R.id.Dishes_RV);
 
 
-        SetUpDishesModel();
+       // SetUpDishesModel();
 
         Dishes_RV_Adapter adapter = new Dishes_RV_Adapter(this, dishes_models);
         recyclerView.setAdapter(adapter);
