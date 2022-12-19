@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    Intent intent01 , intent02, intent03, intent04;
+    Intent intent01 , intent02, intent03;
     FirebaseAuth mAuth;
 
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         intent01 = new Intent(this, SignUp.class);
         intent02 = new Intent(this, LogIn.class);
         intent03 = new Intent(this, Restaurants.class);
-        intent04 = new Intent(this, Dishes.class);
+        //intent04 = new Intent(this, Dishes.class);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -34,12 +34,7 @@ public class MainActivity extends AppCompatActivity {
         binding.btnSignUp.setOnClickListener(view1 -> startActivity(intent01));
         binding.btnSignIn.setOnClickListener(view12 -> startActivity(intent02));
         binding.testbtn.setOnClickListener(v -> startActivity(intent03));
-        binding.ViewMenuBtn02.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(intent04);
-            }
-        });
+
 
 
     }
