@@ -5,6 +5,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 public class Restaurants extends AppCompatActivity {
@@ -13,6 +17,14 @@ public class Restaurants extends AppCompatActivity {
     int[] RestaurantsImages = {R.drawable.kfc , R.drawable.mcdonalds , R.drawable.papajohns ,
             R.drawable.burgerking , R.drawable.starbucks , R.drawable.sizzler , R.drawable.hardees ,
             R.drawable.costa , R.drawable.pizzahut , R.drawable.heartattack};
+
+    // Write a message to the database
+    FirebaseDatabase database = FirebaseDatabase.getInstance("https://wagba01-default-rtdb.europe-west1.firebasedatabase.app/");
+    DatabaseReference myRef = database.getReference("Wagba App");
+
+
+
+
 
 
     ArrayList<Dishes_Model> dishes_models = new ArrayList<>();
@@ -39,11 +51,16 @@ public class Restaurants extends AppCompatActivity {
         Restaurants_RVadapter adapter = new Restaurants_RVadapter(this , restaurant_models_array);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //myRef.setValue("Hello, World!");
+
     }
 
     private void SetUpRestaurantModels() {
         // String[] RestaurantModelsNames = getResources().getStringArray(R.array.RestaurantsNames);
         // SetUpDishesModel();
+
+
 
         ArrayList<Dishes_Model> kfc_menu = new ArrayList<Dishes_Model>();
         kfc_menu.add(new Dishes_Model("Dinner Box", "EGP120", dishesImages[0]));
@@ -51,6 +68,7 @@ public class Restaurants extends AppCompatActivity {
         kfc_menu.add(new Dishes_Model("Mighty Zinger", "EGP100", dishesImages[2]));
         kfc_menu.add(new Dishes_Model("Bucket 21pcs", "EGP350", dishesImages[3]));
         restaurant_models_array.add(new Restaurant_model("KFC", RestaurantsImages[0], kfc_menu));
+        myRef.child("Restaurants").child("KFC").setValue(kfc_menu);
 
 
         ArrayList<Dishes_Model> mac_menu = new ArrayList<Dishes_Model>();
@@ -59,6 +77,9 @@ public class Restaurants extends AppCompatActivity {
         mac_menu.add(new Dishes_Model("Fries", "100EGP", dishesImages[6]));
         mac_menu.add(new Dishes_Model("Apple Pie", "80EGP", dishesImages[7]));
         restaurant_models_array.add(new Restaurant_model("McDonald's", RestaurantsImages[1], mac_menu));
+        myRef.child("Restaurants").child("McDonalds").setValue(mac_menu);
+
+
 
         ArrayList<Dishes_Model> Papa_menu = new ArrayList<Dishes_Model>();
         Papa_menu.add(new Dishes_Model("Chicken Ranch ", "120", dishesImages[8]));
@@ -66,6 +87,8 @@ public class Restaurants extends AppCompatActivity {
         Papa_menu.add(new Dishes_Model("Chicken Ranch Large", "290", dishesImages[10]));
         Papa_menu.add(new Dishes_Model("Chicken Ranch Family", "320", dishesImages[11]));
         restaurant_models_array.add(new Restaurant_model("Papa John's", RestaurantsImages[2], Papa_menu));
+        myRef.child("Restaurants").child("Papa John's").setValue(Papa_menu);
+
 
 
         ArrayList<Dishes_Model> BKing_menu = new ArrayList<Dishes_Model>();
@@ -74,6 +97,7 @@ public class Restaurants extends AppCompatActivity {
         BKing_menu.add(new Dishes_Model("Triple Whooper", "290", dishesImages[14]));
         BKing_menu.add(new Dishes_Model("Cheese Burger", "80", dishesImages[15]));
         restaurant_models_array.add(new Restaurant_model("Burger King", RestaurantsImages[3], BKing_menu));
+        myRef.child("Restaurants").child("Burger King").setValue(BKing_menu);
 
 
         ArrayList<Dishes_Model> Starbucks_menu = new ArrayList<Dishes_Model>();
@@ -82,6 +106,10 @@ public class Restaurants extends AppCompatActivity {
         Starbucks_menu.add(new Dishes_Model("Tea", "90", dishesImages[18]));
         Starbucks_menu.add(new Dishes_Model("Strawberry Coffee", "120", dishesImages[19]));
         restaurant_models_array.add(new Restaurant_model("Starbucks", RestaurantsImages[4], Starbucks_menu));
+        myRef.child("Restaurants").child("Starbucks").setValue(Starbucks_menu);
+
+
+
 
         ArrayList<Dishes_Model> Sizzler = new ArrayList<Dishes_Model>();
         Sizzler.add(new Dishes_Model("Well-done", "120", dishesImages[20]));
@@ -89,6 +117,9 @@ public class Restaurants extends AppCompatActivity {
         Sizzler.add(new Dishes_Model("Medium rare", "190", dishesImages[22]));
         Sizzler.add(new Dishes_Model("Rare", "220", dishesImages[23]));
         restaurant_models_array.add(new Restaurant_model("Sizzler", RestaurantsImages[5], Sizzler));
+        myRef.child("Restaurants").child("Sizzler").setValue(Sizzler);
+
+
 
 
         ArrayList<Dishes_Model> Hardees = new ArrayList<Dishes_Model>();
@@ -97,6 +128,8 @@ public class Restaurants extends AppCompatActivity {
         Hardees.add(new Dishes_Model("Beef Burger", "190", dishesImages[26]));
         Hardees.add(new Dishes_Model("Ham Burger", "220", dishesImages[27]));
         restaurant_models_array.add(new Restaurant_model("Hardees", RestaurantsImages[6], Hardees));
+        myRef.child("Restaurants").child("Hardees").setValue(Hardees);
+
 
 
         ArrayList<Dishes_Model> Costa = new ArrayList<Dishes_Model>();
@@ -105,6 +138,8 @@ public class Restaurants extends AppCompatActivity {
         Costa.add(new Dishes_Model("Latte", "50", dishesImages[30]));
         Costa.add(new Dishes_Model("Cappuccino", "60", dishesImages[31]));
         restaurant_models_array.add(new Restaurant_model("Costa", RestaurantsImages[7], Costa));
+        myRef.child("Restaurants").child("Costa").setValue(Costa);
+
 
 
         ArrayList<Dishes_Model> Hut = new ArrayList<Dishes_Model>();
@@ -113,6 +148,10 @@ public class Restaurants extends AppCompatActivity {
         Hut.add(new Dishes_Model("Chicken Ranch", "190", dishesImages[34]));
         Hut.add(new Dishes_Model("Family Pizza", "220", dishesImages[35]));
         restaurant_models_array.add(new Restaurant_model("Pizza Hut", RestaurantsImages[8], Hut));
+        myRef.child("Restaurants").child("Pizza Hut").setValue(Hut);
+
+
+
 
         ArrayList<Dishes_Model> Attack = new ArrayList<Dishes_Model>();
         Attack.add(new Dishes_Model("Mushroom Burger", "120", dishesImages[36]));
@@ -120,6 +159,9 @@ public class Restaurants extends AppCompatActivity {
         Attack.add(new Dishes_Model("Beef Burger", "190", dishesImages[38]));
         Attack.add(new Dishes_Model("Heart Attack Brgr", "220", dishesImages[39]));
         restaurant_models_array.add(new Restaurant_model("Heart Attack", RestaurantsImages[9], Attack));
+        myRef.child("Restaurants").child("Heart Attack").setValue(Attack);
+
+
     }
 
 

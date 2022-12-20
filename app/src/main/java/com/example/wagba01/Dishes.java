@@ -48,7 +48,7 @@ public class Dishes extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     }
-
+/*
     private void SetUpDishesModel(){
         String[] dishesNames = getResources().getStringArray(R.array.DishNames);
         String[] dishesPrices = getResources().getStringArray(R.array.DishPrices);
@@ -56,5 +56,5 @@ public class Dishes extends AppCompatActivity {
             dishes_models.add(new Dishes_Model(dishesNames[i], dishesPrices[i] , dishesImages[i] ));
         }
 
-    }
+    } */
 }
