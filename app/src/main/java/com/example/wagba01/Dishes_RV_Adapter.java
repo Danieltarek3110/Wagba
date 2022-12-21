@@ -1,6 +1,7 @@
 package com.example.wagba01;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,8 +36,9 @@ public class Dishes_RV_Adapter extends RecyclerView.Adapter<Dishes_RV_Adapter.My
     public void onBindViewHolder(@NonNull Dishes_RV_Adapter.MyViewHolder holder, int position) {
 
         holder.tvName.setText(dishes_models.get(position).getDishName());
-        holder.tvPrice.setText(dishes_models.get(position).DishPrice);
+        holder.tvPrice.setText(dishes_models.get(position).getDishPrice());
         holder.imageView.setImageResource(dishes_models.get(position).getDishImage());
+        Log.d("Errors" , dishes_models.get(position).DishPrice.toString());
 
     }
 
@@ -55,6 +57,7 @@ public class Dishes_RV_Adapter extends RecyclerView.Adapter<Dishes_RV_Adapter.My
             imageView = itemView.findViewById(R.id.imageViewdishRow);
             tvName = itemView.findViewById(R.id.textViewDishName);
             tvPrice = itemView.findViewById(R.id.textViewPrice);
+
         }
     }
 }

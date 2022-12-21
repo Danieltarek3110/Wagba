@@ -32,4 +32,16 @@ public class Dishes_Model implements Serializable {
     public int getDishImage() {
         return DishImage;
     }
+
+    public void setDishName(String dishName) {
+        DishName = dishName;
+    }
+
+    public void setDishPrice(String dishPrice) {
+        DishPrice = dishPrice;
+    }
+
+    public void setDishImage(int dishImage) {
+        DishImage = dishImage;
+    }
 }

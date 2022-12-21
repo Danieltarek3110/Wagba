@@ -38,7 +38,6 @@ public class Restaurants_RVadapter extends RecyclerView.Adapter<Restaurants_RVad
         holder.btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Log.d("Error" , restaurant_models.get(holder.getAdapterPosition()).getMenu().toString());
                 Intent intent = new Intent(v.getContext(), Dishes.class);
                 Bundle extra = new Bundle();
                 extra.putSerializable("menu",restaurant_models.get(holder.getAbsoluteAdapterPosition()).getMenu());
@@ -68,6 +67,5 @@ public class Restaurants_RVadapter extends RecyclerView.Adapter<Restaurants_RVad
             btn = itemView.findViewById(R.id.ViewMenuBtn);
         }
     }
-
 
 }

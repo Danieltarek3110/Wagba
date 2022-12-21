@@ -1,18 +1,25 @@
 package com.example.wagba01;
 
+import static java.lang.Integer.parseInt;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class Dishes extends AppCompatActivity {
-
-
     ArrayList<Dishes_Model> dishes_models = new ArrayList<>();
+
     int[] dishesImages = {
             R.drawable.kfc1 , R.drawable.kfc2 , R.drawable.kfc3 , R.drawable.kfc4 ,
             R.drawable.mcdonalds1 , R.drawable.mcdonalds2 , R.drawable.mcdonalds3 , R.drawable.mcdonalds4 ,
@@ -26,6 +33,12 @@ public class Dishes extends AppCompatActivity {
             R.drawable.heartattack1 , R.drawable.heartattack2 , R.drawable.heartattack3 , R.drawable.heartattack4
     };
 
+   // FirebaseDatabase database = FirebaseDatabase.getInstance("https://wagba01-default-rtdb.europe-west1.firebasedatabase.app/");
+   // DatabaseReference DishRef = database.getReference("Wagba" ).child("Restaurant");
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,16 +46,39 @@ public class Dishes extends AppCompatActivity {
 
         Bundle extra = getIntent().getBundleExtra("extra");
         dishes_models = (ArrayList<Dishes_Model>) extra.getSerializable("menu");
+/*
+
+        int id = (int) extra.get("RestaurantId");
+        DishRef.child(String.valueOf(id)).child("menu").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                    dishes_models.add(postSnapshot.getValue(Dishes_Model.class));
+                }
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+*/
+
 
         RecyclerView recyclerView = findViewById(R.id.Dishes_RV);
-
-       // SetUpDishesModel();
-
         Dishes_RV_Adapter adapter = new Dishes_RV_Adapter(this, dishes_models);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     }
+
+}
+
+
+
+
 /*
     private void SetUpDishesModel(){
         String[] dishesNames = getResources().getStringArray(R.array.DishNames);
@@ -51,5 +87,6 @@ public class Dishes extends AppCompatActivity {
             dishes_models.add(new Dishes_Model(dishesNames[i], dishesPrices[i] , dishesImages[i] ));
         }
 
-    } */
-}
+    }
+
+*/
