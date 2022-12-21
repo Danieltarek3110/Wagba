@@ -5,9 +5,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 public class Restaurant_model implements Serializable {
     String name;
+    int id;
     int image;
     Button btn;
-    ArrayList<Dishes_Model> Menu = new ArrayList<Dishes_Model>();
+    ArrayList<Dishes_Model> Menu = new ArrayList<>();
 
     public Restaurant_model(String name, int image, ArrayList<Dishes_Model> menu) {
         this.name = name;
@@ -23,6 +24,14 @@ public class Restaurant_model implements Serializable {
     }
 
     public Restaurant_model() {
+    }
+
+    public Restaurant_model(String name, int id, int image, Button btn, ArrayList<Dishes_Model> menu) {
+        this.name = name;
+        this.id = id;
+        this.image = image;
+        this.btn = btn;
+        Menu = menu;
     }
 
     public String getName() {

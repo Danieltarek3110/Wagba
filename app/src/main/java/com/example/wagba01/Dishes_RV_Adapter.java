@@ -38,7 +38,6 @@ public class Dishes_RV_Adapter extends RecyclerView.Adapter<Dishes_RV_Adapter.My
         holder.tvPrice.setText(dishes_models.get(position).DishPrice);
         holder.imageView.setImageResource(dishes_models.get(position).getDishImage());
 
-
     }
 
     @Override

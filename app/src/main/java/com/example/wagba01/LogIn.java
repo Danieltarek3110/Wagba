@@ -22,8 +22,6 @@ public class LogIn extends AppCompatActivity {
     EditText userEmail , userPassword;
     Button loginbtn;
     FirebaseAuth mAuth;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +39,6 @@ public class LogIn extends AppCompatActivity {
                 loginUser();
             }
         });
-
     }
 
     private void loginUser(){
@@ -50,12 +47,10 @@ public class LogIn extends AppCompatActivity {
         if(TextUtils.isEmpty(Email)){
             userEmail.setError("Email field cannot be empty");
             userEmail.requestFocus();
-
         }else if(TextUtils.isEmpty(pass)){
             userPassword.setError("Password field cannot be empty");
             userPassword.requestFocus();
         }else{
-
             mAuth.signInWithEmailAndPassword(Email , pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -68,7 +63,6 @@ public class LogIn extends AppCompatActivity {
                 }
             });
         }
-
     }
     }
 

@@ -30,16 +30,11 @@ public class Dishes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dishes);
-        Log.d("Error" , "dishes_models.toString()");
 
         Bundle extra = getIntent().getBundleExtra("extra");
-        Log.d("Error: " , dishes_models.toString());
         dishes_models = (ArrayList<Dishes_Model>) extra.getSerializable("menu");
-        Log.d("Error: " , dishes_models.toString());
-
 
         RecyclerView recyclerView = findViewById(R.id.Dishes_RV);
-
 
        // SetUpDishesModel();
 

@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
         binding.btnSignIn.setOnClickListener(view12 -> startActivity(intent02));
         binding.testbtn.setOnClickListener(v -> startActivity(intent03));
 
-
-
     }
 
     @Override
