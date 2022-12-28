@@ -33,11 +33,6 @@ public class Dishes extends AppCompatActivity {
             R.drawable.heartattack1 , R.drawable.heartattack2 , R.drawable.heartattack3 , R.drawable.heartattack4
     };
 
-   // FirebaseDatabase database = FirebaseDatabase.getInstance("https://wagba01-default-rtdb.europe-west1.firebasedatabase.app/");
-   // DatabaseReference DishRef = database.getReference("Wagba" ).child("Restaurant");
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +41,23 @@ public class Dishes extends AppCompatActivity {
 
         Bundle extra = getIntent().getBundleExtra("extra");
         dishes_models = (ArrayList<Dishes_Model>) extra.getSerializable("menu");
+
+
+
+        RecyclerView recyclerView = findViewById(R.id.Dishes_RV);
+        Dishes_RV_Adapter adapter = new Dishes_RV_Adapter(this, dishes_models);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+    }
+
+}
+
+
+
+// FirebaseDatabase database = FirebaseDatabase.getInstance("https://wagba01-default-rtdb.europe-west1.firebasedatabase.app/");
+// DatabaseReference DishRef = database.getReference("Wagba" ).child("Restaurant");
+
 /*
 
         int id = (int) extra.get("RestaurantId");
@@ -65,18 +77,6 @@ public class Dishes extends AppCompatActivity {
             }
         });
 */
-
-
-        RecyclerView recyclerView = findViewById(R.id.Dishes_RV);
-        Dishes_RV_Adapter adapter = new Dishes_RV_Adapter(this, dishes_models);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-    }
-
-}
-
-
 
 
 /*

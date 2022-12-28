@@ -9,28 +9,30 @@
         android:id="@+id/cardView"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:background="#AF5920"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="#FF9E80"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#E14E16">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/imageViewdishRow"
                 android:layout_width="129dp"
                 android:layout_height="143dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="28dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="25dp"
                 android:contentDescription="TODO"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.142"
+                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/burgerking1" />
 
             <TextView

@@ -26,8 +26,6 @@ public class MainActivity extends AppCompatActivity {
         intent01 = new Intent(this, SignUp.class);
         intent02 = new Intent(this, LogIn.class);
         intent03 = new Intent(this, Restaurants.class);
-        //intent04 = new Intent(this, Dishes.class);
-
         mAuth = FirebaseAuth.getInstance();
 
 

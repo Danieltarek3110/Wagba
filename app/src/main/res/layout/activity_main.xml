@@ -57,7 +57,7 @@
         android:id="@+id/testbtn"
         android:layout_width="160dp"
         android:layout_height="77dp"
-        android:backgroundTint="#C56232"
+        android:backgroundTint="#FFC66232"
         android:text="@string/RestaurantsNearYou"
         android:textSize="12sp"
         app:cornerRadius="20dp"

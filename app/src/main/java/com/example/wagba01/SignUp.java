@@ -59,6 +59,11 @@ public class SignUp extends AppCompatActivity {
         String FirstName = Fname.getText().toString();
         String LastName = Lname.getText().toString();
         String pass = usrpassword.getText().toString();
+        UserModel userModel= new UserModel();
+        userModel.setFirstName(FirstName);
+        userModel.setLastName(LastName);
+
+
         if(TextUtils.isEmpty(Email)){
             usrEmail.setError("Email field cannot be empty");
             usrEmail.requestFocus();
@@ -67,6 +72,7 @@ public class SignUp extends AppCompatActivity {
             usrpassword.setError("Password field cannot be empty");
             usrpassword.requestFocus();
         }else{
+            DatabaseClass.getDatabase(getApplicationContext()).getDao().insertAllData(userModel);
             mAuth.createUserWithEmailAndPassword(Email , pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
