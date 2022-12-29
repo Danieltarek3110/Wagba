@@ -3,9 +3,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,6 +20,7 @@ import java.util.ArrayList;
 
 public class Restaurants extends AppCompatActivity {
     ArrayList<Restaurant_model> restaurant_models_array = new ArrayList<>();
+    Button MyCart;
 
     int[] RestaurantsImages = {R.drawable.kfc , R.drawable.mcdonalds , R.drawable.papajohns ,
             R.drawable.burgerking , R.drawable.starbucks , R.drawable.sizzler , R.drawable.hardees ,
@@ -47,7 +51,14 @@ public class Restaurants extends AppCompatActivity {
         setContentView(R.layout.activity_restaurants);
         RecyclerView recyclerView = findViewById(R.id.restaurants_RV);
 
-       //PopulateDatabase();
+        MyCart =  findViewById(R.id.MyCartBtn);
+        MyCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext() , Cart.class);
+                startActivity(intent);
+            }
+        });
 
 
         myRef.child("Restaurant").addValueEventListener(new ValueEventListener() {

@@ -44,13 +44,13 @@
         android:backgroundTint="#FFC66232"
         android:text="@string/DiffLogin"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
+        app:layout_constraintEnd_toStartOf="@+id/MyCartBtn"
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/MyCartBtn"
         android:layout_width="120dp"
         android:layout_height="55dp"
         android:layout_marginTop="4dp"

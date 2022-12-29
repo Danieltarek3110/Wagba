@@ -1,10 +1,13 @@
 package com.example.wagba01;
 
+import android.widget.Button;
+
 public class Cart_Model {
 
     String DishName;
     String DishPrice;
     int DishImage;
+    Button Rmv;
 
     public Cart_Model(String dishName, String dishPrice, int dishImage) {
         DishName = dishName;
@@ -13,6 +16,13 @@ public class Cart_Model {
     }
 
     public Cart_Model() {
+    }
+
+    public Cart_Model(String dishName, String dishPrice, int dishImage, Button rmv) {
+        DishName = dishName;
+        DishPrice = dishPrice;
+        DishImage = dishImage;
+        Rmv = rmv;
     }
 
     public String getDishName() {
@@ -37,5 +47,13 @@ public class Cart_Model {
 
     public void setDishImage(int dishImage) {
         DishImage = dishImage;
+    }
+
+    public Button getRmv() {
+        return Rmv;
+    }
+
+    public void setRmv(Button rmv) {
+        Rmv = rmv;
     }
 }

@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
+
 public class SignUp extends AppCompatActivity {
 
     EditText Fname , Lname , usrEmail , usrpassword;
@@ -82,13 +84,12 @@ public class SignUp extends AppCompatActivity {
                     if(task.isSuccessful()){
                         Toast.makeText(SignUp.this , "User Registered successfully" , Toast.LENGTH_SHORT).show();
 
-
-                        String UserId = FirebaseAuth.getInstance().getCurrentUser().getUid() ;
-                        FirebaseDatabase.getInstance().getReference("Wagba").child("User").setValue(UserId);
+                        String UserId = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid() ;
+                        FirebaseDatabase.getInstance().getReference("Wagba").child("user").setValue(UserId);
 
                         startActivity(new Intent(SignUp.this , LogIn.class));
                     }else{
-                        Toast.makeText(SignUp.this , "Registration Error: " + task.getException().getMessage() , Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignUp.this , "Registration Error: " + Objects.requireNonNull(task.getException()).getMessage() , Toast.LENGTH_SHORT).show();
                     }
                 }
             });
