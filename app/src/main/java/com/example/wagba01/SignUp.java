@@ -16,18 +16,22 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUp extends AppCompatActivity {
 
     EditText Fname , Lname , usrEmail , usrpassword;
     Button registerbtn , Already_A_Member;
     FirebaseAuth mAuth;
+    DatabaseReference CartDatabase;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        CartDatabase = FirebaseDatabase.getInstance().getReference();
 
         Fname = findViewById(R.id.FirstName01);
         Lname = findViewById(R.id.LastName02);
@@ -50,7 +54,6 @@ public class SignUp extends AppCompatActivity {
                 createUser();
             }
         });
-
 
     }
     private void createUser(){
@@ -78,6 +81,12 @@ public class SignUp extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                         Toast.makeText(SignUp.this , "User Registered successfully" , Toast.LENGTH_SHORT).show();
+
+
+                        String UserId = FirebaseAuth.getInstance().getCurrentUser().getEmail() ;
+
+                        FirebaseDatabase.getInstance().getReference("Wagba").child("User").setValue(UserId);
+
                         startActivity(new Intent(SignUp.this , LogIn.class));
                     }else{
                         Toast.makeText(SignUp.this , "Registration Error: " + task.getException().getMessage() , Toast.LENGTH_SHORT).show();

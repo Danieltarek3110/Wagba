@@ -2,6 +2,7 @@ package com.example.wagba01;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,19 +22,32 @@ import java.util.ArrayList;
 public class Cart extends AppCompatActivity {
 
 
-    ArrayList<Dishes_Model> inCart = new ArrayList<>();
-    TextView CartList;
+    ArrayList<Cart_Model> inCart = new ArrayList<>();
+
 
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://wagba01-default-rtdb.europe-west1.firebasedatabase.app/");
     DatabaseReference CartRef = database.getReference("Wagba");
+    FirebaseAuth UserNode;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
-        CartList = findViewById(R.id.CartItems);
 
-        //CartRef.child("cart").setValue();
+        RecyclerView recyclerView = findViewById(R.id.CartRecyclerView);
+
+
+        Cart_RV_Adapter adapter = new Cart_RV_Adapter(this , inCart);
+
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        UserNode = FirebaseAuth.getInstance() ;
+        String UserId = UserNode.getCurrentUser().getEmail() ;
+
 
 
         CartRef.child("cart").addValueEventListener(new ValueEventListener() {
@@ -41,11 +56,10 @@ public class Cart extends AppCompatActivity {
 
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
 
-                    inCart.add(postSnapshot.getValue(Dishes_Model.class));
+
 
                 }
-                
-                CartList.setText(inCart.toString());
+
 
             }
 

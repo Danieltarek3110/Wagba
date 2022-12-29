@@ -1,10 +1,7 @@
 package com.example.wagba01;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +24,7 @@ public class Dishes_RV_Adapter extends RecyclerView.Adapter<Dishes_RV_Adapter.My
 
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://wagba01-default-rtdb.europe-west1.firebasedatabase.app/");
     DatabaseReference myRef = database.getReference("Wagba");
-    DatabaseReference cartRef = myRef.child("cart").push();
+
 
 
 
@@ -47,7 +44,7 @@ public class Dishes_RV_Adapter extends RecyclerView.Adapter<Dishes_RV_Adapter.My
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         // position = holder.getAbsoluteAdapterPosition();
         holder.tvName.setText(dishes_models.get(position).getDishName());
@@ -58,8 +55,9 @@ public class Dishes_RV_Adapter extends RecyclerView.Adapter<Dishes_RV_Adapter.My
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), Cart.class);
 
-                cartRef.setValue(new Dishes_Model(dishes_models.get(position).getDishName(),
-                        dishes_models.get(position).getDishPrice(), dishes_models.get(position).getDishImage() ));
+                DatabaseReference cartRef = myRef.child("cart").push();
+                cartRef.setValue(new Dishes_Model(dishes_models.get(holder.getAbsoluteAdapterPosition()).getDishName(),
+                        dishes_models.get(holder.getAbsoluteAdapterPosition()).getDishPrice(), dishes_models.get(holder.getAbsoluteAdapterPosition()).getDishImage() ));
 
 
                 v.getContext().startActivity(intent);
@@ -81,9 +79,9 @@ public class Dishes_RV_Adapter extends RecyclerView.Adapter<Dishes_RV_Adapter.My
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.imageViewdishRow);
-            tvName = itemView.findViewById(R.id.textViewDishName);
-            tvPrice = itemView.findViewById(R.id.textViewPrice);
+            imageView = itemView.findViewById(R.id.imageViewCartRow);
+            tvName = itemView.findViewById(R.id.textViewCartName);
+            tvPrice = itemView.findViewById(R.id.textViewCartPrice);
             AddToCart = itemView.findViewById(R.id.AddToCartBtn);
 
         }

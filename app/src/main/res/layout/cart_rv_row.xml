@@ -37,24 +37,24 @@
 
             <TextView
                 android:id="@+id/textViewCartPrice"
-                android:layout_width="150dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="5dp"
+                android:layout_width="201dp"
+                android:layout_height="89dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="32dp"
                 android:gravity="center"
                 android:text="@string/priceTest"
                 android:textColor="#000000"
-                android:textSize="14sp"
+                android:textSize="28dp"
                 android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewCartName" />
 
             <TextView
                 android:id="@+id/textViewCartName"
-                android:layout_width="150dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginEnd="5dp"
+                android:layout_width="200dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:gravity="center"
                 android:text="@string/app_name"
                 android:textColor="#000000"
@@ -63,21 +63,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/AddToCartBtn"
-                android:layout_width="150dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="8dp"
-                android:backgroundTint="#48AE10"
-                android:text="@string/AddToCart"
-                android:textSize="12sp"
-                app:cornerRadius="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewCartPrice"
-                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
