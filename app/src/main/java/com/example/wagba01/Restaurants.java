@@ -47,7 +47,7 @@ public class Restaurants extends AppCompatActivity {
         setContentView(R.layout.activity_restaurants);
         RecyclerView recyclerView = findViewById(R.id.restaurants_RV);
 
-       //SetUpRestaurantModels();
+       //PopulateDatabase();
 
 
         myRef.child("Restaurant").addValueEventListener(new ValueEventListener() {
@@ -56,14 +56,7 @@ public class Restaurants extends AppCompatActivity {
 
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     restaurant_models_array.add(postSnapshot.getValue(Restaurant_model.class));
-                   /*
-                    String id = (String) postSnapshot.getKey();
-                    String name = (String) postSnapshot.child("name").getValue();
-                    String image = (String) postSnapshot.child("image").getValue();
-                    restaurant_models_array.add(new Restaurant_model(name , Integer.parseInt(id) , dishes_models));
-                    Log.d("Errorr" , id);
 
-                    */
                 }
 
 
@@ -83,7 +76,7 @@ public class Restaurants extends AppCompatActivity {
 
     }
 
-    private void SetUpRestaurantModels() {
+    private void PopulateDatabase() {
 
         ArrayList<Dishes_Model> kfc_menu = new ArrayList<>();
         kfc_menu.add(new Dishes_Model("Dinner Box", "EGP120", dishesImages[0]));
@@ -162,46 +155,3 @@ public class Restaurants extends AppCompatActivity {
 }
 
 
-
-
-/*
-        Restaurants_RVadapter adapter = new Restaurants_RVadapter(this , restaurant_models_array);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-*/
-
-
-
-/*
-        for(int i=0; i<RestaurantModelsNames.length ; i++){
-            restaurant_models_array.add(new Restaurant_model(RestaurantModelsNames[i],RestaurantsImages[i] , dishes_models) );
-
-        }
-    }
-
- */
-/*
-    private void SetUpDishesModel(){
-        String[] dishesNames = getResources().getStringArray(R.array.DishNames);
-        String[] dishesPrices = getResources().getStringArray(R.array.DishPrices);
-        for(int i=0 ; i< dishesNames.length ; i++){
-            dishes_models.add(new Dishes_Model(dishesNames[i], dishesPrices[i] , dishesImages[i] ));
-        }
-
-    }
-*/
-
-
-
-/*
-
- int restaurantID = snap.getKey();
-String restaurantCategory = (String) snap.child("restaurantCategory").getValue();
-                        String restaurantName = (String) snap.child("restaurantName").getValue();
-                        float restaurantRating = Float.parseFloat(snap.child("restaurantRating").getValue().toString());
-                        String restaurantImage = (String) snap.child("restaurantImage").getValue();
-
-
-
-restaurantModels.add(new RestaurantModel(Integer.parseInt(restaurantID),restaurantName, restaurantCategory, restaurantRating, restaurantImage));
- */

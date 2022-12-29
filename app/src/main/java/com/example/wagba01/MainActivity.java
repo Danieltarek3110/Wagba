@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     Intent intent01 , intent02, intent03;
     FirebaseAuth mAuth;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +27,9 @@ public class MainActivity extends AppCompatActivity {
         intent03 = new Intent(this, Restaurants.class);
         mAuth = FirebaseAuth.getInstance();
 
-
         binding.btnSignUp.setOnClickListener(view1 -> startActivity(intent01));
         binding.btnSignIn.setOnClickListener(view12 -> startActivity(intent02));
         binding.testbtn.setOnClickListener(v -> startActivity(intent03));
-
     }
 
     @Override
@@ -43,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
         if(user==null){
             startActivity(new Intent(MainActivity.this , SignUp.class));
         }
-
     }
-
 
 }

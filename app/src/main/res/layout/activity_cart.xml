@@ -9,13 +9,21 @@
 
     tools:context=".Cart">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listCart"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent" />
+    <TextView
+        android:id="@+id/CartItems"
+        android:layout_width="365dp"
+        android:layout_height="502dp"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="600dp"

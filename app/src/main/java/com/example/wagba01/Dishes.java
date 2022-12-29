@@ -20,6 +20,10 @@ import java.util.ArrayList;
 public class Dishes extends AppCompatActivity {
     ArrayList<Dishes_Model> dishes_models = new ArrayList<>();
 
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance("https://wagba01-default-rtdb.europe-west1.firebasedatabase.app/");
+    DatabaseReference CartRef = database.getReference("Wagba");
+
     int[] dishesImages = {
             R.drawable.kfc1 , R.drawable.kfc2 , R.drawable.kfc3 , R.drawable.kfc4 ,
             R.drawable.mcdonalds1 , R.drawable.mcdonalds2 , R.drawable.mcdonalds3 , R.drawable.mcdonalds4 ,
@@ -49,44 +53,22 @@ public class Dishes extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        //PopulateDatabaseUser();
+
+
+
     }
+
+/*
+    private void PopulateDatabaseUser() {
+
+
+        CartRef.child("User").setValue("DanielTest");
+
+    }
+
+ */
 
 }
 
 
-
-// FirebaseDatabase database = FirebaseDatabase.getInstance("https://wagba01-default-rtdb.europe-west1.firebasedatabase.app/");
-// DatabaseReference DishRef = database.getReference("Wagba" ).child("Restaurant");
-
-/*
-
-        int id = (int) extra.get("RestaurantId");
-        DishRef.child(String.valueOf(id)).child("menu").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
-                    dishes_models.add(postSnapshot.getValue(Dishes_Model.class));
-                }
-            }
-
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-*/
-
-
-/*
-    private void SetUpDishesModel(){
-        String[] dishesNames = getResources().getStringArray(R.array.DishNames);
-        String[] dishesPrices = getResources().getStringArray(R.array.DishPrices);
-        for(int i=0 ; i< dishesNames.length ; i++){
-            dishes_models.add(new Dishes_Model(dishesNames[i], dishesPrices[i] , dishesImages[i] ));
-        }
-
-    }
-
-*/
