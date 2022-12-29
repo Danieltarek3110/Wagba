@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -24,6 +26,8 @@ public class Dishes_RV_Adapter extends RecyclerView.Adapter<Dishes_RV_Adapter.My
 
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://wagba01-default-rtdb.europe-west1.firebasedatabase.app/");
     DatabaseReference myRef = database.getReference("Wagba");
+    FirebaseUser userRef = FirebaseAuth.getInstance().getCurrentUser();
+
 
 
 
@@ -39,7 +43,6 @@ public class Dishes_RV_Adapter extends RecyclerView.Adapter<Dishes_RV_Adapter.My
 
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.dish_row , parent , false);
-
         return new Dishes_RV_Adapter.MyViewHolder(view);
     }
 
@@ -55,9 +58,10 @@ public class Dishes_RV_Adapter extends RecyclerView.Adapter<Dishes_RV_Adapter.My
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), Cart.class);
 
-                DatabaseReference cartRef = myRef.child("cart").push();
+                DatabaseReference cartRef = myRef.child("user").child(userRef.getUid()).child("cart").push();
                 cartRef.setValue(new Dishes_Model(dishes_models.get(holder.getAbsoluteAdapterPosition()).getDishName(),
-                        dishes_models.get(holder.getAbsoluteAdapterPosition()).getDishPrice(), dishes_models.get(holder.getAbsoluteAdapterPosition()).getDishImage() ));
+                        dishes_models.get(holder.getAbsoluteAdapterPosition()).getDishPrice(),
+                        dishes_models.get(holder.getAbsoluteAdapterPosition()).getDishImage() ));
 
 
                 v.getContext().startActivity(intent);

@@ -20,9 +20,9 @@ public class Cart_RV_Adapter extends RecyclerView.Adapter<Cart_RV_Adapter.MyView
     Context context;
     ArrayList<Cart_Model> cart_models;
 
-
-    FirebaseDatabase database = FirebaseDatabase.getInstance("https://wagba01-default-rtdb.europe-west1.firebasedatabase.app/");
-    DatabaseReference myRef = database.getReference("Wagba");
+//
+//    FirebaseDatabase database = FirebaseDatabase.getInstance("https://wagba01-default-rtdb.europe-west1.firebasedatabase.app/");
+//    DatabaseReference myRef = database.getReference("Wagba");
 
 
     public  Cart_RV_Adapter(Context context , ArrayList<Cart_Model> cart_models){
@@ -46,9 +46,9 @@ public class Cart_RV_Adapter extends RecyclerView.Adapter<Cart_RV_Adapter.MyView
     @Override
     public void onBindViewHolder(@NonNull Cart_RV_Adapter.MyViewHolder holder, int position) {
 
-        holder.textViewDishName.setText(cart_models.get(position).getCartDishName());
-        holder.textViewDishPrice.setText(cart_models.get(position).getCartDishPrice());
-        holder.imageView.setImageResource(cart_models.get(position).getCartDishImage());
+        holder.textViewDishName.setText(cart_models.get(position).getDishName());
+        holder.textViewDishPrice.setText(cart_models.get(position).getDishPrice());
+        holder.imageView.setImageResource(cart_models.get(position).getDishImage());
 
 
 

@@ -2,41 +2,40 @@ package com.example.wagba01;
 
 public class Cart_Model {
 
-    String CartDishName;
-    String CartDishPrice;
-    int CartDishImage;
+    String DishName;
+    String DishPrice;
+    int DishImage;
 
-
-    public Cart_Model(String cartDishName, String cartDishPrice, int cartDishImage) {
-        CartDishName = cartDishName;
-        CartDishPrice = cartDishPrice;
-        CartDishImage = cartDishImage;
+    public Cart_Model(String dishName, String dishPrice, int dishImage) {
+        DishName = dishName;
+        DishPrice = dishPrice;
+        DishImage = dishImage;
     }
 
     public Cart_Model() {
     }
 
-    public String getCartDishName() {
-        return CartDishName;
+    public String getDishName() {
+        return DishName;
     }
 
-    public void setCartDishName(String cartDishName) {
-        CartDishName = cartDishName;
+    public void setDishName(String dishName) {
+        DishName = dishName;
     }
 
-    public String getCartDishPrice() {
-        return CartDishPrice;
+    public String getDishPrice() {
+        return DishPrice;
     }
 
-    public void setCartDishPrice(String cartDishPrice) {
-        CartDishPrice = cartDishPrice;
+    public void setDishPrice(String dishPrice) {
+        DishPrice = dishPrice;
     }
 
-    public int getCartDishImage() {
-        return CartDishImage;
+    public int getDishImage() {
+        return DishImage;
     }
 
-    public void setCartDishImage(int cartDishImage) {
-        CartDishImage = cartDishImage;
+    public void setDishImage(int dishImage) {
+        DishImage = dishImage;
     }
 }

@@ -59,9 +59,7 @@ public class Restaurants extends AppCompatActivity {
 
                 }
 
-
-                Restaurants_RVadapter adapter = new Restaurants_RVadapter(Restaurants.this ,
-                        restaurant_models_array);
+                Restaurants_RVadapter adapter = new Restaurants_RVadapter(Restaurants.this , restaurant_models_array);
                 recyclerView.setAdapter(adapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(Restaurants.this));
 

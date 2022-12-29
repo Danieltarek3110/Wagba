@@ -34,32 +34,25 @@ public class Cart extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
-
         RecyclerView recyclerView = findViewById(R.id.CartRecyclerView);
 
 
-        Cart_RV_Adapter adapter = new Cart_RV_Adapter(this , inCart);
-
-
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
         UserNode = FirebaseAuth.getInstance() ;
-        String UserId = UserNode.getCurrentUser().getEmail() ;
+        String UserId = UserNode.getCurrentUser().getUid() ;
 
 
-
-        CartRef.child("cart").addValueEventListener(new ValueEventListener() {
+        CartRef.child("user").child(UserId).child("cart").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-
-
+                    inCart.add(postSnapshot.getValue(Cart_Model.class));
 
                 }
 
+                Cart_RV_Adapter adapter = new Cart_RV_Adapter(Cart.this , inCart);
+                recyclerView.setAdapter(adapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(Cart.this));
 
             }
 
@@ -71,8 +64,28 @@ public class Cart extends AppCompatActivity {
         });
 
 
-
-
-
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

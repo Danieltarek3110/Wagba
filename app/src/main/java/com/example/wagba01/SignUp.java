@@ -83,8 +83,7 @@ public class SignUp extends AppCompatActivity {
                         Toast.makeText(SignUp.this , "User Registered successfully" , Toast.LENGTH_SHORT).show();
 
 
-                        String UserId = FirebaseAuth.getInstance().getCurrentUser().getEmail() ;
-
+                        String UserId = FirebaseAuth.getInstance().getCurrentUser().getUid() ;
                         FirebaseDatabase.getInstance().getReference("Wagba").child("User").setValue(UserId);
 
                         startActivity(new Intent(SignUp.this , LogIn.class));

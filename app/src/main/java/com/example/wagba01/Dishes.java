@@ -53,21 +53,9 @@ public class Dishes extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //PopulateDatabaseUser();
-
-
 
     }
 
-/*
-    private void PopulateDatabaseUser() {
-
-
-        CartRef.child("User").setValue("DanielTest");
-
-    }
-
- */
 
 }
 
