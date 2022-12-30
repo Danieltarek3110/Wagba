@@ -31,6 +31,7 @@ public class Cart extends AppCompatActivity {
 
 
     ArrayList<Cart_Model> inCart = new ArrayList<>();
+    ArrayList<Orders_Model> order = new ArrayList<>();
 
 
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://wagba01-default-rtdb.europe-west1.firebasedatabase.app/");
@@ -41,22 +42,18 @@ public class Cart extends AppCompatActivity {
     TextView CartTotalTxt;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+
+
         RecyclerView recyclerView = findViewById(R.id.CartRecyclerView);
 
         PlaceOrder = findViewById(R.id.PlaceOrderBtn);
         CartTotalTxt = findViewById(R.id.CartTotal);
-
-        PlaceOrder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), Orders.class);
-                startActivity(intent);
-            }
-        });
 
         UserNode = FirebaseAuth.getInstance() ;
         String UserId = UserNode.getCurrentUser().getUid() ;
@@ -85,11 +82,30 @@ public class Cart extends AppCompatActivity {
                 }
 
 
+                PlaceOrder.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(v.getContext(), Orders.class);
+
+                        DatabaseReference OrdersRef = CartRef.child("user").child(Objects.requireNonNull(UserNode.getUid())).child("orders").push();
+                        OrdersRef.setValue(new Orders_Model("Setting Tracking Number" , "Pending Approval" ,"EGP400"  ));
+
+                        v.getContext().startActivity(intent);
+                    }
+                });
+
+
                 Cart_RV_Adapter adapter = new Cart_RV_Adapter(Cart.this , inCart);
                 recyclerView.setAdapter(adapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(Cart.this));
 
+
             }
+
+
+
+
+
 
             @Override
             public void onCancelled(DatabaseError error) {

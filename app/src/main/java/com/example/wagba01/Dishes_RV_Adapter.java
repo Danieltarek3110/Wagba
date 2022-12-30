@@ -83,9 +83,9 @@ public class Dishes_RV_Adapter extends RecyclerView.Adapter<Dishes_RV_Adapter.My
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.imageViewCartRow);
-            tvName = itemView.findViewById(R.id.textViewCartName);
-            tvPrice = itemView.findViewById(R.id.textViewCartPrice);
+            imageView = itemView.findViewById(R.id.imageViewOrderRow);
+            tvName = itemView.findViewById(R.id.OrderTracking);
+            tvPrice = itemView.findViewById(R.id.OrderPrice);
             AddToCart = itemView.findViewById(R.id.AddToCartBtn);
 
         }

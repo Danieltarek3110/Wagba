@@ -51,6 +51,7 @@ public class Restaurants extends AppCompatActivity {
         setContentView(R.layout.activity_restaurants);
         RecyclerView recyclerView = findViewById(R.id.restaurants_RV);
 
+
         MyCart =  findViewById(R.id.MyCartBtn);
         MyCart.setOnClickListener(new View.OnClickListener() {
             @Override

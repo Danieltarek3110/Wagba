@@ -138,7 +138,12 @@
 
 
 
+    <string name="EmptyCart">0</string>
+    <string name="EGP">EGP</string>
     <string name="RemoveFromCart">Remove</string>
+    <string name="BackHome">Home</string>
+
+    <string name="PendingApproval">Pending Approval</string>
 
     <string name="slide_1_title">Hello Food!</string>
     <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
