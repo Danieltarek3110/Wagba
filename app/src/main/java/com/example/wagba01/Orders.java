@@ -16,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Orders extends AppCompatActivity {
 
@@ -38,15 +39,22 @@ public class Orders extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.OrdersRecyclerView);
 
         UserAuth = FirebaseAuth.getInstance() ;
-        String UId = UserAuth.getCurrentUser().getUid() ;
+        String UId = Objects.requireNonNull(UserAuth.getCurrentUser()).getUid() ;
 
         OrdersRef.child("user").child(UId).child("orders").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
-                    Log.d("Order" , orders_models.toString());
+                    Log.d("Orderrrr" , orders_models.toString());
                     orders_models.add(postSnapshot.getValue(Orders_Model.class));
                 }
+
+
+
+
+                Orders_RV_Adapter adapter = new Orders_RV_Adapter(Orders.this, orders_models);
+                recyclerView.setAdapter(adapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(Orders.this));
             }
 
             @Override
@@ -56,9 +64,6 @@ public class Orders extends AppCompatActivity {
         });
 
 
-        Orders_RV_Adapter adapter = new Orders_RV_Adapter(Orders.this, orders_models);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(Orders.this));
     }
 
 
