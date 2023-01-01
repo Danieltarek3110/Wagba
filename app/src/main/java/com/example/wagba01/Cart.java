@@ -87,9 +87,6 @@ public class Cart extends AppCompatActivity {
                         DatabaseReference OrdersRef = CartRef.child("user").child(Objects.requireNonNull(UserNode.getUid())).child("orders").push();
                         OrdersRef.setValue(new Orders_Model("Setting Tracking Number" , "Pending Approval" , String.valueOf(finalCartTotal)));
 
-                        DatabaseReference Tracking = CartRef.child("Track").push();
-                        Tracking.setValue(new Orders_Model("Setting Tracking Number" , "Pending Approval" , String.valueOf(finalCartTotal)));
-
                         v.getContext().startActivity(intent);
                     }
                 });
@@ -101,11 +98,6 @@ public class Cart extends AppCompatActivity {
 
 
             }
-
-
-
-
-
 
             @Override
             public void onCancelled(DatabaseError error) {

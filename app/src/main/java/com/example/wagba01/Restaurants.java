@@ -52,6 +52,8 @@ public class Restaurants extends AppCompatActivity {
         setContentView(R.layout.activity_restaurants);
         RecyclerView recyclerView = findViewById(R.id.restaurants_RV);
 
+
+
         MyOrders = findViewById(R.id.button_MyOrders);
         MyOrders.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,10 +108,10 @@ public class Restaurants extends AppCompatActivity {
         restaurant_models_array.add(new Restaurant_model("KFC", RestaurantsImages[0], kfc_menu));
 
         ArrayList<Dishes_Model> mac_menu = new ArrayList<>();
-        mac_menu.add(new Dishes_Model("Cheese Burger", "120EGP", dishesImages[4]));
-        mac_menu.add(new Dishes_Model("Chicken Macdo", "240EGP", dishesImages[5]));
-        mac_menu.add(new Dishes_Model("Fries", "100EGP", dishesImages[6]));
-        mac_menu.add(new Dishes_Model("Apple Pie", "80EGP", dishesImages[7]));
+        mac_menu.add(new Dishes_Model("Cheese Burger", "EGP120", dishesImages[4]));
+        mac_menu.add(new Dishes_Model("Chicken Macdo", "EGP80", dishesImages[5]));
+        mac_menu.add(new Dishes_Model("Fries", "EGP100", dishesImages[6]));
+        mac_menu.add(new Dishes_Model("Apple Pie", "EGP80", dishesImages[7]));
         restaurant_models_array.add(new Restaurant_model("McDonald's", RestaurantsImages[1], mac_menu));
 
         ArrayList<Dishes_Model> Papa_menu = new ArrayList<>();
@@ -130,7 +132,7 @@ public class Restaurants extends AppCompatActivity {
         Starbucks_menu.add(new Dishes_Model("Caramel Coffee", "EGP20", dishesImages[16]));
         Starbucks_menu.add(new Dishes_Model("Latte", "EGP40", dishesImages[17]));
         Starbucks_menu.add(new Dishes_Model("Tea", "EGP90", dishesImages[18]));
-        Starbucks_menu.add(new Dishes_Model("Strawberry Coffee", "120", dishesImages[19]));
+        Starbucks_menu.add(new Dishes_Model("Strawberry Coffee", "EGP120", dishesImages[19]));
         restaurant_models_array.add(new Restaurant_model("Starbucks", RestaurantsImages[4], Starbucks_menu));
 
         ArrayList<Dishes_Model> Sizzler = new ArrayList<>();
