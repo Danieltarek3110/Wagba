@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class Restaurants extends AppCompatActivity {
     ArrayList<Restaurant_model> restaurant_models_array = new ArrayList<>();
     Button MyCart;
+    Button MyOrders;
 
     int[] RestaurantsImages = {R.drawable.kfc , R.drawable.mcdonalds , R.drawable.papajohns ,
             R.drawable.burgerking , R.drawable.starbucks , R.drawable.sizzler , R.drawable.hardees ,
@@ -51,6 +52,15 @@ public class Restaurants extends AppCompatActivity {
         setContentView(R.layout.activity_restaurants);
         RecyclerView recyclerView = findViewById(R.id.restaurants_RV);
 
+        MyOrders = findViewById(R.id.button_MyOrders);
+        MyOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext() , Orders.class);
+
+                startActivity(intent);
+            }
+        });
 
         MyCart =  findViewById(R.id.MyCartBtn);
         MyCart.setOnClickListener(new View.OnClickListener() {

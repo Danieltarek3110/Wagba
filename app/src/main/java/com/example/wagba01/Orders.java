@@ -45,12 +45,8 @@ public class Orders extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
-                    Log.d("Orderrrr" , orders_models.toString());
                     orders_models.add(postSnapshot.getValue(Orders_Model.class));
                 }
-
-
-
 
                 Orders_RV_Adapter adapter = new Orders_RV_Adapter(Orders.this, orders_models);
                 recyclerView.setAdapter(adapter);

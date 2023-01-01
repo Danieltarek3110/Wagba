@@ -58,37 +58,37 @@ public class Cart extends AppCompatActivity {
         UserNode = FirebaseAuth.getInstance() ;
         String UserId = UserNode.getCurrentUser().getUid() ;
 
+
+
         CartRef.child("user").child(UserId).child("cart").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
                 int CartTotal = 0;
+
 
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     inCart.add(postSnapshot.getValue(Cart_Model.class));
 
-
-
                     String totalPrice =postSnapshot.child("dishPrice").getValue().toString();
-                    Log.d("DishPrice" , totalPrice);
                     totalPrice = (totalPrice).substring(3, totalPrice.length());
-                    Log.d("DishPrice" , totalPrice);
                     CartTotal += Integer.parseInt(totalPrice);
                     Log.d("CartTotal" , String.valueOf(CartTotal));
-
-
 
                     CartTotalTxt.setText(String.valueOf(CartTotal));
                 }
 
 
+                int finalCartTotal = CartTotal;
                 PlaceOrder.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(v.getContext(), Orders.class);
 
                         DatabaseReference OrdersRef = CartRef.child("user").child(Objects.requireNonNull(UserNode.getUid())).child("orders").push();
-                        OrdersRef.setValue(new Orders_Model("Setting Tracking Number" , "Pending Approval" ,"EGP400"  ));
+                        OrdersRef.setValue(new Orders_Model("Setting Tracking Number" , "Pending Approval" , String.valueOf(finalCartTotal)));
+
+                        DatabaseReference Tracking = CartRef.child("Track").push();
+                        Tracking.setValue(new Orders_Model("Setting Tracking Number" , "Pending Approval" , String.valueOf(finalCartTotal)));
 
                         v.getContext().startActivity(intent);
                     }
